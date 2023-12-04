@@ -8,3 +8,15 @@
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
+.site-footer {
+  background-color: #278AB0;
+  color: #ffffff;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+.site-footer a:hover {
+  color: #1DC690;
+}
