@@ -1,17 +1,18 @@
 import { useSelector } from "react-redux";
-
 import { sortUniqueValues } from "../features/books/booksSlice";
+import { categories } from "../app/shared/categories";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-
-    const books = useSelector(sortUniqueValues);
- 
+    
     return (
         <>
-            {books.map((book, idx) => {
+            {categories.map((category, idx) => {
                     return (
                         <div id={idx} key={idx} className="text-center">
-                            {book.volumeInfo.title}
+                            <Link to={`/category/${category}`}>
+                                {category.toUpperCase()}
+                            </Link> 
                         </div>
                     )
             })}

@@ -80,4 +80,7 @@ export const sortUniqueValues = (state) => {
     })
 }
 
+export const getSingleBook = (title) => (state) => {
+    return state.books.booksArray.find((book) => book.volumeInfo.title === title)
+} 
 

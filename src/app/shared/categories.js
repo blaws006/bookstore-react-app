@@ -7,5 +7,6 @@ export const categories = [
     'young adult fiction',
     'humor',
     'biography',
-    'fantasy fiction'
+    'fantasy fiction',
+    'horror fiction'
 ]
