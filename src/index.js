@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
 import 'typeface-open-sans';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const container = document.getElementById('root');
@@ -16,7 +17,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+     <BrowserRouter>
       <App />
+     </BrowserRouter> 
     </Provider>
   </React.StrictMode>
 );

@@ -4,32 +4,32 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBooks, findBookByCategory, clearBooksArr } from './features/books/booksSlice';
+import { Route, Routes } from 'react-router-dom';
+import { fetchBooks, clearBooksArr} from './features/books/booksSlice';
 import { categories } from './app/shared/categories';
+import Home from './pages/Home';
+
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(clearBooksArr())
-  }, [dispatch])
-
+  
   useEffect(() =>{
+      dispatch(clearBooksArr());
       let i = 0;
-      
-      while(i < categories.length) {
+      while (i < categories.length) {
         dispatch(fetchBooks(categories[i]));
-        i++;
+          i++;
       }
-       
+      
   }, [dispatch]);
 
-  const books = useSelector(findBookByCategory('nonfiction'));
-
-  console.log(books)
 
   return (
     <div className='App'>
       <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
       <Footer />
     </div>
   )

@@ -28,9 +28,8 @@ const booksSlice = createSlice({
     reducers: {
         clearBooksArr: (state) => {
             state.booksArray = []
-            console.log(state.booksArray);
         }
-        
+
     },
     extraReducers: (builder) => 
        builder.addCase(fetchBooks.pending, (state) => {
@@ -39,14 +38,15 @@ const booksSlice = createSlice({
         .addCase(fetchBooks.fulfilled, (state, action) => {
             state.isLoading = false;
             state.errMsg = '';
-            action.payload.items.forEach((book) => {
-               if (!state.booksArray.includes(book.id)) {
-                console.log(book)
-                state.booksArray.push(book);
-               }
+            
+            action.payload.items.forEach((book, idx) => {
+                
+                if (state.booksArray.indexOf(book.id) === -1) {
+                    
+                    state.booksArray.push(book);  
+                }
             })
             
-            // console.log(state.booksArray)
         })
         .addCase(fetchBooks.rejected, (state, action) => {
             state.isLoading = false;
@@ -60,6 +60,10 @@ export const booksReducer = booksSlice.reducer;
 
 export const { clearBooksArr } = booksSlice.actions;
 
+export const getAllBooks = (state) => {
+    return state.books.booksArray;
+}
+
 export const findBookByCategory = (genre) => (state) => {
     if (genre.includes(' ')) {
         genre = genre.split(' ').join('+')
@@ -67,7 +71,13 @@ export const findBookByCategory = (genre) => (state) => {
     }
 
     return state.books.booksArray.filter((book, index, { id }) => book.volumeInfo.previewLink.includes(genre) 
-    && index === state.books.booksArray.findIndex((o) => o.id === book.id))
+    && index === state.books.booksArray.findIndex((o) => o.id === book.id));
+}
+
+export const sortUniqueValues = (state) => {
+    return state.books.booksArray.filter((obj, index) => {
+        return index === state.books.booksArray.findIndex((o) => obj.id === o.id)
+    })
 }
 
 
