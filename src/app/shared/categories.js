@@ -1,11 +1,11 @@
 export const categories = [
-    'thrillers',
+    'thriller',
     'sci-fi',
     'fiction',
     'mystery',
-    'non-fiction',
+    'nonfiction',
     'young adult fiction',
     'humor',
     'biography',
-    'fantasy'
+    'fantasy fiction'
 ]
