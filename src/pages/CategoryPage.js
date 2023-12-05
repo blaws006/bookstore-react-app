@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { categories } from "../app/shared/categories";
 import { findBookByCategory } from "../features/books/booksSlice";
 import { Link } from "react-router-dom";
 

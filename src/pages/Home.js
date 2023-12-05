@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { sortUniqueValues } from "../features/books/booksSlice";
 import { categories } from "../app/shared/categories";
 import { Link } from 'react-router-dom';
 
