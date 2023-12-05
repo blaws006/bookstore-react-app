@@ -1,10 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getAllBooks, findBookByCategory, sortUniqueValues } from "../features/books/booksSlice";
-import { clearBooksArr } from "../features/books/booksSlice";
-import { categories } from "../app/shared/categories";
+import { useSelector } from "react-redux";
 
-
+import { sortUniqueValues } from "../features/books/booksSlice";
 
 const Home = () => {
 
