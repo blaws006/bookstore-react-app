@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { findBookByCategory } from "../features/books/booksSlice";
+import { findBookByCategory} from "../features/books/booksSlice";
 import { Link } from "react-router-dom";
 
 
 const CategoryPage = () => {
     const { category } = useParams();
     const books = useSelector(findBookByCategory(category));
-
+    console.log(books)
     return (
         <>
             {books.map((book, idx) => {

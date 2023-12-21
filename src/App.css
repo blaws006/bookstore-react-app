@@ -20,3 +20,12 @@
 .site-footer a:hover {
   color: #1DC690;
 }
+
+.text-overflow-clamp {
+  width: 100%;
+  /* this code clamps based on specified lines */
+  overflow: hidden;
+ -webkit-box-orient: vertical;
+-webkit-line-clamp: 10;
+display: -webkit-box;
+}

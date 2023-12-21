@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { fetchBooks, clearBooksArr} from './features/books/booksSlice';
 import { categories } from './app/shared/categories';
@@ -24,8 +24,9 @@ function App() {
       }
       
   }, [dispatch]);
-
-
+  const books = useSelector((state) => state.books.booksArray)
+  console.log(books);
+  
   return (
     <div className='App'>
       <Header />
