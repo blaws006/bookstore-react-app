@@ -24,8 +24,8 @@ const BookPage = () => {
              </Row>
              <Row style={{marginTop: 20}}>
               <Col>
-                <a href={book.volumeInfo.infoLink} target="_blank" rel="noreferrer">
-                  <Button color='info' style={{color: '#fff', fontWeight: 'bold'}}>
+                <a href={book.volumeInfo.infoLink} target="_blank" rel="noreferrer" >
+                  <Button color='info' className='book-text' style={{ color: '#fff', fontWeight: 'bold' }}>
                      Find Book
                   </Button>
                 </a>
@@ -36,7 +36,7 @@ const BookPage = () => {
               <h1>{book.volumeInfo.title}</h1>
               <p>Author: {book.volumeInfo.authors.join(', ')}</p>
               <p>Genres: {book.volumeInfo.categories.join(', ')}</p>
-              <p>Average Rating among readers: {book.volumeInfo.averageRating} out of 5</p>
+              {book.volumeInfo.averageRating && <p>Average Rating among readers: {book.volumeInfo.averageRating} out of 5</p>}
               <p className='text-overflow-clamp'>{book.volumeInfo.description}</p>
             </Col>
           </Row>
