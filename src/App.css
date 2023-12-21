@@ -1,8 +1,29 @@
+body, html, #root {
+  height: auto;
+  
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;        /* for the footer to move with the page size */
+    min-height: 100%;        /* for the footer to be at the bottom */
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+ 
+}
+
+.growHeight {
+  
+}
+
 .nav-links {
   justify-content: center;
 }
 
 .navbar {
+  width: 100%;
   background-color: #278AB0;
   color: #ffffff;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -19,6 +40,20 @@
 
 .site-footer a:hover {
   color: #1DC690;
+}
+
+.clipLongTitle {
+  overflow: hidden;
+ -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  display: -webkit-box;
+}
+
+.clipAuthor {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+     -webkit-line-clamp: 1;
+   display: -webkit-box;
 }
 
 .text-overflow-clamp {

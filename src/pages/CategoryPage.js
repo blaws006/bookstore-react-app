@@ -11,7 +11,7 @@ const CategoryPage = () => {
     const books = useSelector(findBookByCategory(category));
     console.log(books)
     return (
-        <Container>
+        <Container className="growHeight">
             <Row xs='6' style={{ justifyContent: 'center', alignItems: 'center' }}>
                 {books.map((book, idx) => {
                     return (      

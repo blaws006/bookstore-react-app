@@ -10,6 +10,7 @@ import { categories } from './app/shared/categories';
 import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
 import BookPage from './pages/BookPage';
+import { Container } from 'reactstrap';
 
 
 function App() {
@@ -30,11 +31,13 @@ function App() {
   return (
     <div className='App'>
       <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/category/:category' element={<CategoryPage />} />
-          <Route path='/books/:title' element={<BookPage />} />
-        </Routes>
+        <Container className='wrapper'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/category/:category' element={<CategoryPage />} />
+            <Route path='/books/:title' element={<BookPage />} />
+          </Routes>
+      </Container>
       <Footer />
     </div>
   )
