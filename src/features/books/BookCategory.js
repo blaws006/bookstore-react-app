@@ -1,11 +1,9 @@
 import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-
-const BookCategory = ({ books }) => {
+const BookCategory = ({ books, category }) => {
     console.log(books)
     return (
-       
             <Card
                 color="info" 
                 outline
@@ -24,7 +22,7 @@ const BookCategory = ({ books }) => {
                     <CardSubtitle tag='h6' className="clipAuthor mb-3">
                         {books.volumeInfo.authors.join(', ')}
                     </CardSubtitle>
-                    <Link to={`/books/${books.volumeInfo.title}`}>
+                    <Link to={`/category/${category}/books/${books.volumeInfo.title}`}>
                         <Button color="info" style={{ color: '#fff', fontWeight: 'bold' }}>More Info</Button>
                     </Link>
                 </CardBody>

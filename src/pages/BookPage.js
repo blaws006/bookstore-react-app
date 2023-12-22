@@ -2,13 +2,17 @@ import { useParams } from "react-router-dom";
 import { getSingleBook } from "../features/books/booksSlice";
 import { useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "reactstrap";
+import SubHeader from "../components/SubHeader";
 
 const BookPage = () => {
-    const { title } = useParams();
+    const { title, category } = useParams();
     const book = useSelector(getSingleBook(title))
-    
+    console.log(category)
     return (
         <Container style={{ alignItems: 'center', justifyContent: 'center', height: 100+'%', marginTop: 50 }}>
+          <Row>
+            {title && <SubHeader current={title.toUpperCase()} detail={true} category={category} /> }
+          </Row>
           <Row sm='1' md='2'>
             <Col style={{flexDirection: 'column', display: 'flex'}} lg='4'>
              <Row>

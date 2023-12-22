@@ -35,7 +35,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/category/:category' element={<CategoryPage />} />
-            <Route path='/books/:title' element={<BookPage />} />
+            <Route path='/category/:category/books/:title' element={<BookPage />} />
           </Routes>
       </Container>
       <Footer />
