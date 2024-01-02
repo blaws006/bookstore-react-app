@@ -71,5 +71,14 @@ display: -webkit-box;
 }
 
 .breadCrumb:hover {
+  color: #1DC690;
+}
+
+.homePageTitle {
   color: #278AB0;
+  text-decoration: none;
+}
+
+.homePageTitle:hover {
+  color: #1DC690;
 }
